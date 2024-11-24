@@ -40,4 +40,4 @@ default_tags = {
    Product = "secure-k8s"
 }
 
-inventory_file = "../../inventory/hosts"
+inventory_file = "../../inventory/secure-k8s/hosts"

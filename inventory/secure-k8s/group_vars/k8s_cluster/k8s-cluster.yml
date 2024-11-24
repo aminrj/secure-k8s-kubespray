@@ -8,9 +8,6 @@ kube_config_dir: /etc/kubernetes
 kube_script_dir: "{{ bin_dir }}/kubernetes-scripts"
 kube_manifest_dir: "{{ kube_config_dir }}/manifests"
 
-etcd_kubeadm_enabled: false
-ansible_user: admin
-
 # This is where all the cert scripts and certs will be located
 kube_cert_dir: "{{ kube_config_dir }}/ssl"
 
@@ -44,6 +41,7 @@ credentials_dir: "{{ inventory_dir }}/credentials"
 ## It is possible to activate / deactivate selected authentication methods (oidc, static token auth)
 # kube_oidc_auth: false
 # kube_token_auth: false
+
 
 ## Variables for OpenID Connect Configuration https://kubernetes.io/docs/admin/authentication/
 ## To use OpenID you have to deploy additional an OpenID Provider (e.g Dex, Keycloak, ...)
@@ -120,7 +118,7 @@ kube_network_node_prefix_ipv6: 120
 
 # The port the API Server will be listening on.
 kube_apiserver_ip: "{{ kube_service_addresses | ansible.utils.ipaddr('net') | ansible.utils.ipaddr(1) | ansible.utils.ipaddr('address') }}"
-kube_apiserver_port: 6443 # (https)
+kube_apiserver_port: 6443  # (https)
 
 # Kube-proxy proxyMode configuration.
 # Can be ipvs, iptables
