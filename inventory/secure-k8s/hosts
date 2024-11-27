@@ -1,22 +1,22 @@
 [all]
-ip-10-250-195-95.eu-north-1.compute.internal ansible_host=10.250.195.95
-ip-10-250-195-70.eu-north-1.compute.internal ansible_host=10.250.195.70
-ip-10-250-195-66.eu-north-1.compute.internal ansible_host=10.250.195.66
-ip-10-250-199-237.eu-north-1.compute.internal ansible_host=10.250.199.237
-bastion ansible_host=51.20.140.194
+ip-10-250-202-204.eu-north-1.compute.internal ansible_host=10.250.202.204
+ip-10-250-197-170.eu-north-1.compute.internal ansible_host=10.250.197.170
+ip-10-250-202-100.eu-north-1.compute.internal ansible_host=10.250.202.100
+ip-10-250-195-117.eu-north-1.compute.internal ansible_host=10.250.195.117
+bastion ansible_host=13.61.0.242
 
 [bastion]
-bastion ansible_host=51.20.140.194
+bastion ansible_host=13.61.0.242
 
 [kube_control_plane]
-ip-10-250-195-95.eu-north-1.compute.internal
+ip-10-250-202-204.eu-north-1.compute.internal
 
 [kube_node]
-ip-10-250-195-70.eu-north-1.compute.internal
-ip-10-250-195-66.eu-north-1.compute.internal
+ip-10-250-197-170.eu-north-1.compute.internal
+ip-10-250-202-100.eu-north-1.compute.internal
 
 [etcd]
-ip-10-250-199-237.eu-north-1.compute.internal
+ip-10-250-195-117.eu-north-1.compute.internal
 
 [calico_rr]
 
@@ -26,5 +26,5 @@ kube_control_plane
 calico_rr
 
 [k8s_cluster:vars]
-apiserver_loadbalancer_domain_name="k8s-nlb-secure-k8s-devtest-a738901c5fa4ab3f.elb.eu-north-1.amazonaws.com"
+apiserver_loadbalancer_domain_name="k8s-nlb-secure-k8s-devtest-8888eae348c28b2e.elb.eu-north-1.amazonaws.com"
 
