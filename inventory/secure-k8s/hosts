@@ -1,12 +1,12 @@
 [all]
-ip-10-250-207-32.eu-north-1.compute.internal ansible_host=10.250.207.32
-ip-10-250-197-76.eu-north-1.compute.internal ansible_host=10.250.197.76
-ip-10-250-194-177.eu-north-1.compute.internal ansible_host=10.250.194.177
-ip-10-250-200-127.eu-north-1.compute.internal ansible_host=10.250.200.127
-bastion ansible_host=16.170.227.24
+ip-10-250-207-32.eu-north-1.compute.internal ansible_host=10.250.207.32 ansible_user=admin
+ip-10-250-197-76.eu-north-1.compute.internal ansible_host=10.250.197.76 ansible_user=admin
+ip-10-250-194-177.eu-north-1.compute.internal ansible_host=10.250.194.177 ansible_user=admin
+ip-10-250-200-127.eu-north-1.compute.internal ansible_host=10.250.200.127 ansible_user=admin
+bastion ansible_host=16.170.227.24 ansible_user=admin
 
 [bastion]
-bastion ansible_host=16.170.227.24
+bastion ansible_host=16.170.227.24 ansible_user=admin
 
 [kube_control_plane]
 ip-10-250-207-32.eu-north-1.compute.internal

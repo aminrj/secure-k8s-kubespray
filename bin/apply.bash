@@ -19,11 +19,11 @@ pushd "${kubespray_path}"
 log_info "Running kubespray"
 # ansible-playbook -i "${config[inventory_file]}" cluster.yml -b "${@}"
 cd "${here}/../kubespray"
-ansible-playbook -i "${config[inventory_file]}" \
-  -e ansible_user=admin \
-  -e ansible_ssh_private_key_file="~/.ssh/id_rsa_secure-k8s.pem" \
-  --become \
-  cluster.yml
+# ansible-playbook -i "${config[inventory_file]}" \
+#   -e ansible_user=admin \
+#   -e ansible_ssh_private_key_file="~/.ssh/id_rsa_secure-k8s.pem" \
+#   --become \
+#   cluster.yml
 
 # ansible-playbook -i ../inventory/secure-k8s/hosts \
 #   -e ansible_user=admin \
