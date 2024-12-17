@@ -1,22 +1,22 @@
 [all]
-ip-10-250-207-32.eu-north-1.compute.internal ansible_host=10.250.207.32 ansible_user=admin
-ip-10-250-197-76.eu-north-1.compute.internal ansible_host=10.250.197.76 ansible_user=admin
-ip-10-250-194-177.eu-north-1.compute.internal ansible_host=10.250.194.177 ansible_user=admin
-ip-10-250-200-127.eu-north-1.compute.internal ansible_host=10.250.200.127 ansible_user=admin
-bastion ansible_host=16.170.227.24 ansible_user=admin
+ip-10-250-201-151.eu-north-1.compute.internal ansible_host=10.250.201.151
+ip-10-250-202-9.eu-north-1.compute.internal ansible_host=10.250.202.9
+ip-10-250-206-252.eu-north-1.compute.internal ansible_host=10.250.206.252
+ip-10-250-194-37.eu-north-1.compute.internal ansible_host=10.250.194.37
+bastion ansible_host=13.60.11.104
 
 [bastion]
-bastion ansible_host=16.170.227.24 ansible_user=admin
+bastion ansible_host=13.60.11.104
 
 [kube_control_plane]
-ip-10-250-207-32.eu-north-1.compute.internal
+ip-10-250-201-151.eu-north-1.compute.internal
 
 [kube_node]
-ip-10-250-197-76.eu-north-1.compute.internal
-ip-10-250-194-177.eu-north-1.compute.internal
+ip-10-250-202-9.eu-north-1.compute.internal
+ip-10-250-206-252.eu-north-1.compute.internal
 
 [etcd]
-ip-10-250-200-127.eu-north-1.compute.internal
+ip-10-250-194-37.eu-north-1.compute.internal
 
 [calico_rr]
 
@@ -26,5 +26,5 @@ kube_control_plane
 calico_rr
 
 [k8s_cluster:vars]
-apiserver_loadbalancer_domain_name="k8s-nlb-secure-k8s-devtest-ce723fa4455497ee.elb.eu-north-1.amazonaws.com"
+apiserver_loadbalancer_domain_name="k8s-nlb-secure-k8s-devtest-cb76b5ac9426dc91.elb.eu-north-1.amazonaws.com"
 

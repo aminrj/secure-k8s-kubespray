@@ -6,10 +6,13 @@ if [[ "${CK8S_CONFIG_PATH:0:2}" == "~/" ]]; then
     echo "please use \${HOME} instead if that's what you want" 1>&2
 fi
 
-# Create CK8S_CONFIG_PATH if it does not exist and make it absolute
-CK8S_CONFIG_PATH=$(readlink -m "${CK8S_CONFIG_PATH}")
+# Resolve CK8S_CONFIG_PATH to an absolute path
+CK8S_CONFIG_PATH=$(cd "${CK8S_CONFIG_PATH:-.}" && pwd)
+# Create the directory if it does not exist
 mkdir -p "${CK8S_CONFIG_PATH}"
+# Export the path
 export CK8S_CONFIG_PATH
+
 
 here="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 root_path="${here}/.."

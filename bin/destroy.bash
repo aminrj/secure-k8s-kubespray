@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Remove the infrastructure for the cluster
 here="$(dirname "$(readlink -f "$0")")"

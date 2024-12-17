@@ -19,30 +19,13 @@ pushd "${kubespray_path}"
 log_info "Running kubespray"
 # ansible-playbook -i "${config[inventory_file]}" cluster.yml -b "${@}"
 cd "${here}/../kubespray"
-# ansible-playbook -i "${config[inventory_file]}" \
-#   -e ansible_user=admin \
-#   -e ansible_ssh_private_key_file="~/.ssh/id_rsa_secure-k8s.pem" \
-#   --become \
-#   cluster.yml
-
-# ansible-playbook -i ../inventory/secure-k8s/hosts \
-#   -e ansible_user=admin \
-#   -e ansible_ssh_private_key_file="~/.ssh/id_rsa_secure-k8s.pem" \
-#   --become \
-#   cluster.yml
+# Deploy Kubespray with the provided inventory file
+ansible-playbook -i "${config[inventory_file]}" \
+  -e ansible_user=admin \
+  -e ansible_ssh_private_key_file="~/.ssh/id_rsa_secure-k8s.pem" \
+  --become \
+  cluster.yml
 
 log_info "Kubespray done"
 
-# log_info "Get kubeconfig"
-ansible-playbook -i "${config[inventory_file]}" ../playbooks/kubeconfig.yml -b
-# log_info "Adding cluster-admin ClusterRoleBinding"
-# ansible-playbook -i "${config[inventory_file]}" ../playbooks/cluster_admin_rbac.yml -b
-
-# log_info "Master cis benchmark patching"
-# ansible-playbook -i "${config[inventory_file]}" ../playbooks/master_cis_benchmark_patch.yml -b
-# log_info "Worker cis benchmark patching"
-# ansible-playbook -i "${config[inventory_file]}" ../playbooks/worker_cis_benchmark_patch.yml -b
-
 popd
-
-log_info "Cluster created successfully!"
